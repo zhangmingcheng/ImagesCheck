@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>osp.cloud</groupId>
+  <artifactId>ImagesCheck</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+    <parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.3.RELEASE</version>
+		<relativePath/>
+	</parent>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<spring-cloud.version>Dalston.RELEASE</spring-cloud.version>
+	</properties>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+    </dependencyManagement>
+    
+	<dependencies>
+        <!--表示为web工程-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		
+		<!-- 不用重启 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+			<scope>true</scope>
+        </dependency>
+        
+        <dependency>
+		    <groupId>net.sf.json-lib</groupId>
+		    <artifactId>json-lib</artifactId>
+		    <version>2.4</version>
+		    <classifier>jdk15</classifier>
+		</dependency>
+		
+		<!-- request body -->
+		<dependency>  
+		     <groupId>org.codehaus.jackson</groupId>  
+		     <artifactId>jackson-mapper-asl</artifactId>  
+		     <version>1.9.8</version>  
+		     <type>jar</type>  
+		     <scope>compile</scope>  
+        </dependency>
+	</dependencies>
+	
+	<build>  
+        <finalName>ImagesCheck</finalName>  
+        <plugins>  
+            <plugin>  
+                <groupId>org.springframework.boot</groupId>  
+                <artifactId>spring-boot-maven-plugin</artifactId>  
+            </plugin>  
+        </plugins>  
+    </build>  
+    <repositories>  
+        <repository>  
+            <id>spring-milestone</id>  
+            <url>http://repo.spring.io/libs-release</url>  
+        </repository>  
+    </repositories>
+</project>
