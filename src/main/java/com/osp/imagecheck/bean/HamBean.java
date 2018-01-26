@@ -1,13 +1,19 @@
 package com.osp.imagecheck.bean;
 
+import java.io.Serializable;
+
 /**
- * 汉明距离实体类
+ * 汉明距离实体类 Set<HamBean>集合使用
  * 
  * @author zhangmingcheng
  * @date 2018年1月8日
  */
-public class HamBean {
+public class HamBean implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String dhash;
 	private String filename;
 	private int hamcount;

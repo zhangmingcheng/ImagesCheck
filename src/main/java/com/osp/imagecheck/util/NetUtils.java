@@ -9,6 +9,8 @@ import java.net.URLConnection;
  * @author zmcheng
  */
 public class NetUtils {
+	
+	@SuppressWarnings("finally")
 	public static String sendGet(String url) {
 		String result = "";
 		BufferedReader in = null;
@@ -41,7 +43,7 @@ public class NetUtils {
 			} catch (Exception e2) {
 				e2.printStackTrace();
 			}
+			return result;
 		}
-		return result;
 	}
 }
